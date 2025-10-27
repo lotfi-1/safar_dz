@@ -1,23 +1,39 @@
 import React from 'react';
 import { useTheme } from './contexts/ThemeProvider';
+import { useAuth } from './contexts/AuthProvider';
 import './i18n';
-// import { SafeAreaView } from 'react-native-safe-area-context';
-import HomeScreen from './screens/TestScreen';
 import {
   View, StatusBar,
   Platform,
+  ActivityIndicator,
 } from 'react-native';
+import AuthNavigator from './navigation/AuthNavigator';
+import MainTabNavigator from './navigation/MainTabNavigator';
 
 const Root: React.FC = () => {
   const { isDark, colors } = useTheme();
+  const { isAuthenticated, isLoading } = useAuth();
   const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight;
+
+  if (isLoading) {
+    return (
+      <View style={[{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: colors.background }]}>
+        <StatusBar
+          barStyle={isDark ? 'light-content' : 'dark-content'}
+        />
+        <View style={{ height: STATUSBAR_HEIGHT, backgroundColor: colors.background }} />
+        <ActivityIndicator size="large" color={colors.primary} />
+      </View>
+    );
+  }
+
   return (
-    <View style={[{ "flex": 1 }]}>
+    <View style={[{ flex: 1 }]}>
       <StatusBar
         barStyle={isDark ? 'light-content' : 'dark-content'}
       />
       <View style={{ height: STATUSBAR_HEIGHT, backgroundColor: colors.background }} />
-      <HomeScreen />
+      {isAuthenticated ? <MainTabNavigator /> : <AuthNavigator />}
     </View>
   );
 };
