@@ -1,0 +1,25 @@
+export default {
+  background: '#FFFFFF',
+  surface: '#F7F8FA',
+  text: {
+    primary: '#272835',
+    secondary: '#666D80',
+    muted: '#A4ABB8',
+    inverse: '#FFFFFF',
+  },
+  primary: '#FE3311',
+  primaryLight: '#FF9471',
+  accent: '#3D9DF6',
+  border: '#C1C7CF',
+  overlay: '#DFE1E6',
+  icon: {
+    active: '#FE3311',
+    inactive: '#666D80',
+  },
+  success: '#1BC47D',
+  warning: '#FFB020',
+  error: '#D32F2F',
+  white: '#FFFFFF',
+  black: '#000000',
+  shadow: 'rgba(0,0,0,0.05)',
+};

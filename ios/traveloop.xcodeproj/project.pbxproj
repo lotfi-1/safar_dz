@@ -11,6 +11,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		2D38CDD3519E4C41A13D033D /* NotoSansArabic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D90A35BE7AAE4A2FAF2EB653 /* NotoSansArabic.ttf */; };
+		E8F54CF1EC1F440CA07CB0A4 /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EFF9A809114CACBE44C3C6 /* NunitoSans-Italic.ttf */; };
+		891A1712C7CB4D8CBAECE967 /* NunitoSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3133E124A7D46AD8F67AFB1 /* NunitoSans.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = traveloop/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = traveloop/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		D90A35BE7AAE4A2FAF2EB653 /* NotoSansArabic.ttf */ = {isa = PBXFileReference; name = "NotoSansArabic.ttf"; path = "../src/assets/fonts/NotoSansArabic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		44EFF9A809114CACBE44C3C6 /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; name = "NunitoSans-Italic.ttf"; path = "../src/assets/fonts/NunitoSans-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D3133E124A7D46AD8F67AFB1 /* NunitoSans.ttf */ = {isa = PBXFileReference; name = "NunitoSans.ttf"; path = "../src/assets/fonts/NunitoSans.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				028E1DC50E0F4B11915694D0 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -96,6 +103,17 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		028E1DC50E0F4B11915694D0 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				D90A35BE7AAE4A2FAF2EB653 /* NotoSansArabic.ttf */,
+				44EFF9A809114CACBE44C3C6 /* NunitoSans-Italic.ttf */,
+				D3133E124A7D46AD8F67AFB1 /* NunitoSans.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -159,6 +177,9 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				2D38CDD3519E4C41A13D033D /* NotoSansArabic.ttf in Resources */,
+				E8F54CF1EC1F440CA07CB0A4 /* NunitoSans-Italic.ttf in Resources */,
+				891A1712C7CB4D8CBAECE967 /* NunitoSans.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
