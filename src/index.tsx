@@ -1,20 +1,24 @@
 import React from 'react';
-import { LanguageProvider } from './contexts/LanguageProvider';
-import { ThemeProvider } from './contexts/ThemeProvider';
+import { useTheme } from './contexts/ThemeProvider';
 import './i18n';
-import { SafeAreaView } from 'react-native-safe-area-context';
+// import { SafeAreaView } from 'react-native-safe-area-context';
 import HomeScreen from './screens/TestScreen';
+import {
+  View, StatusBar,
+  Platform,
+} from 'react-native';
 
 const Root: React.FC = () => {
-
+  const { isDark, colors } = useTheme();
+  const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight;
   return (
-    <SafeAreaView style={[{ "flex": 1 }, { backgroundColor: "#FFFFFF" }]}>
-      <LanguageProvider>
-        <ThemeProvider>
-          <HomeScreen />
-        </ThemeProvider>
-      </LanguageProvider>
-    </SafeAreaView>
+    <View style={[{ "flex": 1 }]}>
+      <StatusBar
+        barStyle={isDark ? 'light-content' : 'dark-content'}
+      />
+      <View style={{ height: STATUSBAR_HEIGHT, backgroundColor: colors.background }} />
+      <HomeScreen />
+    </View>
   );
 };
 

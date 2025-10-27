@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  StatusBar,
   Text,
   StyleSheet,
   KeyboardAvoidingView,
@@ -16,6 +15,7 @@ import { useTheme } from '../contexts/ThemeProvider';
 import { SearchIcon } from '../assets';
 import { TextField } from '../components/TextFeild';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import PrimaryButton from '../components/PrimaryButton';
 
 const HomeScreen: React.FC = () => {
   const { language, fontFamily, toggleLanguage } = useLanguage();
@@ -24,13 +24,11 @@ const HomeScreen: React.FC = () => {
 
   return (
     <View style={[styles.safeArea, { backgroundColor: colors.background }]}>
-      <StatusBar
-        barStyle={isDark ? 'light-content' : 'dark-content'}
-        backgroundColor={colors.background}
-      />
+      
 
       <KeyboardAvoidingView
         style={{ flex: 1 }}
+
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <ScrollView
@@ -69,19 +67,20 @@ const HomeScreen: React.FC = () => {
                 element: <SearchIcon width={20} height={20} />,
                 rotateInRTL: false,
               }}
-            // suffixIcon={{
-            //   element: <SendIcon width={20} height={20} />,
-            //   rotateInRTL: true,
-            // }}
+
             />
           </View>
 
           {/* Buttons */}
           <View style={styles.buttonsContainer}>
-            <Button
-              title={language === 'ar' ? 'تغيير اللغة' : 'Change Language'}
-              onPress={toggleLanguage}
-              color={colors.primary}
+            <PrimaryButton
+              type='secondary'
+              text={language === 'ar' ? 'تغيير اللغة' : 'Change Language'}
+              props={{
+                onPress: toggleLanguage,
+                // color: colors.primary
+              }}
+              suffix={<SearchIcon width={20} height={20} />}
             />
 
             <Button

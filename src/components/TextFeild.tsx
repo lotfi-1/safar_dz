@@ -4,7 +4,6 @@ import {
   TextInput,
   StyleSheet,
   TextInputProps,
-  TouchableOpacity,
 } from 'react-native';
 import { useTheme } from '../contexts/ThemeProvider';
 import { useLanguage } from '../contexts/LanguageProvider';
@@ -31,7 +30,7 @@ export const TextField: React.FC<TextFieldProps> = ({
 
   const isRTL = language === 'ar';
   const borderColor = isFocused ? colors.text.primary : colors.border;
-  const iconColor = isFocused ? colors.text.primary : colors.icon.inactive;
+  const iconColor = isFocused ? colors.text.primary : colors.border;
 
   const renderIcon = (icon?: IconProps, onPress?: () => void) => {
     if (!icon?.element) return null;
@@ -42,13 +41,11 @@ export const TextField: React.FC<TextFieldProps> = ({
     ];
 
     return (
-      <TouchableOpacity
+      <View
         style={style}
-        activeOpacity={onPress ? 0.7 : 1}
-        onPress={onPress}
       >
         {React.cloneElement(icon.element as any, { fill: iconColor })}
-      </TouchableOpacity>
+      </View>
     );
   };
 
@@ -57,6 +54,8 @@ export const TextField: React.FC<TextFieldProps> = ({
       style={[
         styles.container,
         { borderColor, backgroundColor: colors.surface },
+        { flexDirection: isRTL ? 'row-reverse' : 'row' },
+
       ]}
     >
       {renderIcon(prefixIcon)}
@@ -89,11 +88,12 @@ export const TextField: React.FC<TextFieldProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: 12,
+    gap: 8,
+    height: 52
   },
   input: {
     flex: 1,
@@ -103,5 +103,6 @@ const styles = StyleSheet.create({
   iconContainer: {
     justifyContent: 'center',
     alignItems: 'center',
+
   },
 });
